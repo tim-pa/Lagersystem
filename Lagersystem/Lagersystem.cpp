@@ -336,6 +336,17 @@ void Lagersystem::exit_button_4_clicked(){
 }
 
 void Lagersystem::search_button_4_clicked() {
+	QString timestring = ui.lineEdit_time_4->text();
+	QString articlenumber = ui.lineEdit_articlenumber_4->text();
+	QString articlename = ui.lineEdit_articlename_4->text();
+	QString changecategory = ui.lineEdit_changecategory_4->text();
+
+	QString error = logiccontroller.search_in_aenderungsverlauf(db, query_model, timestring, articlenumber, articlename, changecategory);
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
+
+	selected_articlenumber = "";
 }
 
 // Inits

@@ -681,3 +681,54 @@ QString LogicController::change_lagerbestand(QSqlDatabase database, QSqlQueryMod
 
     return "";
 }
+
+QString LogicController::search_in_aenderungsverlauf(QSqlDatabase database, QSqlQueryModel* query_model, QString zeitpunkt, QString artikelnummer, QString bezeichnung, QString aenderungsart) {
+    QSqlQuery query(database);
+
+    QStringList bedingungen;
+
+    if (zeitpunkt != "") {
+        bedingungen << QString("Zeitpunkt LIKE :zeitpunkt");
+    }
+    if (artikelnummer != "") {
+        bedingungen << QString("(alte_Artikelnummer LIKE :artikelnummer OR neue_Artikelnummer LIKE :artikelnummer)");
+    }
+    if (bezeichnung != "") {
+        bedingungen << QString("(alte_Bezeichnung LIKE :bezeichnung OR neue_Bezeichnung LIKE :bezeichnung)");
+    }
+    if (aenderungsart != "") {
+        bedingungen << QString("Aenderungsart LIKE :aenderungsart");
+    }
+
+    QString anweisung = "SELECT * FROM aenderungsverlauf";
+
+    if (!bedingungen.isEmpty()) {
+        anweisung += " WHERE ";
+        anweisung += bedingungen.join(" AND ");
+    }
+
+    anweisung += " ORDER BY -Aenderungs_ID";
+
+    query.prepare(anweisung);
+
+    if (zeitpunkt != "") {
+        query.bindValue(":zeitpunkt", "%" + zeitpunkt + "%");
+    }
+    if (artikelnummer != "") {
+        query.bindValue(":artikelnummer", "%" + artikelnummer + "%");
+    }
+    if (bezeichnung != "") {
+        query.bindValue(":bezeichnung", "%" + bezeichnung + "%");
+    }
+    if (aenderungsart != "") {
+        query.bindValue(":aenderungsart", "%" + aenderungsart + "%");
+    }
+
+
+    if (!query.exec()) {
+        return "Fehler: " + query.lastError().text();
+    }
+
+    query_model->setQuery(std::move(query));
+    return "";
+}

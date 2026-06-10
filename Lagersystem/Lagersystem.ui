@@ -442,9 +442,9 @@
          </widget>
         </item>
         <item row="1" column="3">
-         <widget class="QLabel" name="label_storecategory_4">
+         <widget class="QLabel" name="label_changecategory_4">
           <property name="text">
-           <string>Buchungsart</string>
+           <string>Änderungsart</string>
           </property>
          </widget>
         </item>
@@ -465,7 +465,7 @@
          <widget class="QLineEdit" name="lineEdit_articlename_4"/>
         </item>
         <item row="2" column="3">
-         <widget class="QLineEdit" name="lineEdit_storecategory_4"/>
+         <widget class="QLineEdit" name="lineEdit_changecategory_4"/>
         </item>
         <item row="2" column="4">
          <widget class="QPushButton" name="search_button_4">
