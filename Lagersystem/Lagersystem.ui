@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LagersystemClass</class>
+ <widget class="QMainWindow" name="LagersystemClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>942</width>
+    <height>639</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lagersystem</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>4</number>
+      </property>
+      <widget class="QWidget" name="page_0">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Lagerbestand</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_articlenumber_0">
+            <property name="text">
+             <string>Artikelnummer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_category_0">
+            <property name="text">
+             <string>Kategorie</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_articlename_0">
+            <property name="text">
+             <string>Bezeichnung</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_amount_0">
+            <property name="text">
+             <string>Menge</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_shelf_0">
+            <property name="text">
+             <string>Regal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_minamount_0">
+            <property name="text">
+             <string>Mindestmenge</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_articlenumber_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_category_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_articlename_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_amount_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_shelf_0"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_minamount_0"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="search_button_0">
+            <property name="text">
+             <string>Suchen</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <widget class="QTableView" name="tableView_0"/>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="store_button">
+            <property name="text">
+             <string>Ein-/Ausbuchen</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="store_history_button">
+            <property name="text">
+             <string>Buchungsverlauf</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="change_button">
+            <property name="text">
+             <string>Ändern</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="change_history_button">
+            <property name="text">
+             <string>Änderungsverlauf</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_1">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QLabel" name="text_heading_1">
+          <property name="text">
+           <string>Ein-/Ausbuchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_articlenumber_1">
+          <property name="text">
+           <string>Artikelnummer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_articlename_1">
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="EXIT_button_1">
+          <property name="text">
+           <string>EXIT</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="lineEdit_articlenumber_1"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_articlename_1"/>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="search_button_1">
+          <property name="text">
+           <string>Suchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="4">
+         <widget class="QTableView" name="tableView_1"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QSpinBox" name="spinBox_amount_1"/>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="store_out_button_1">
+          <property name="text">
+           <string>Ausbuchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QPushButton" name="store_in_button_1">
+          <property name="text">
+           <string>Einbuchen</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="lineEdit_storecategory_2"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_time_2">
+          <property name="text">
+           <string>Zeitpunkt</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="5">
+         <widget class="QTableView" name="tableView_2"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_articlenumber_2">
+          <property name="text">
+           <string>Artikelnummer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="EXIT_button_2">
+          <property name="text">
+           <string>EXIT</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_articlename_2">
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="lineEdit_articlename_2"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_articlenumber_2"/>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="search_button_2">
+          <property name="text">
+           <string>Suchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="lineEdit_time_2"/>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_storecategory_2">
+          <property name="text">
+           <string>Buchungsart</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="text_heading_2">
+          <property name="text">
+           <string>Buchungsverlauf</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QLabel" name="text_heading_3">
+          <property name="text">
+           <string>Ändern</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_articlenumber_3">
+          <property name="text">
+           <string>Artikelnummer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_articlename_3">
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="EXIT_button_3">
+          <property name="text">
+           <string>EXIT</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="lineEdit_articlenumber_3_1"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_articlename_3_1"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="search_button_3">
+          <property name="text">
+           <string>Suchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QTableView" name="tableView_3"/>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="delete_button_3">
+          <property name="text">
+           <string>löschen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_articlenumber_3_1">
+            <property name="text">
+             <string>Artikelnummer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_category_3">
+            <property name="text">
+             <string>Kategorie</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_articlename_3_1">
+            <property name="text">
+             <string>Bezeichnung</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_amount_3">
+            <property name="text">
+             <string>Menge</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_shelf_3">
+            <property name="text">
+             <string>Regal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_minamount_3">
+            <property name="text">
+             <string>Mindestmenge</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="5" column="2" rowspan="2">
+         <widget class="QPushButton" name="add_button_3">
+          <property name="text">
+           <string>hinzufügen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" rowspan="2" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_articlenumber_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_category_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_articlename_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_amount_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_shelf_3"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_minamount_3"/>
+          </item>
+         </layout>
+        </item>
+        <item row="7" column="2">
+         <widget class="QPushButton" name="change_button_3">
+          <property name="text">
+           <string>ändern</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="text_heading_4">
+          <property name="text">
+           <string>Änderungsverlauf</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_time_4">
+          <property name="text">
+           <string>Zeitpunkt</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_articlenumber_4">
+          <property name="text">
+           <string>Artikelnummer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_articlename_4">
+          <property name="text">
+           <string>Bezeichnung</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_storecategory_4">
+          <property name="text">
+           <string>Buchungsart</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="EXIT_button_4">
+          <property name="text">
+           <string>EXIT</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="lineEdit_time_4"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEdit_articlenumber_4"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLineEdit" name="lineEdit_articlename_4"/>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="lineEdit_storecategory_4"/>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="search_button_4">
+          <property name="text">
+           <string>Suchen</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="5">
+         <widget class="QTableView" name="tableView_4"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="Lagersystem.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+x64/
+Debug/
+Release/
+*.user
+*.obj
+*.o
+
+# Qt
+ui_*.h
+moc_*.cpp
+*.qmake.stash
+
+# Datenbankdatei
+Lagerdaten
