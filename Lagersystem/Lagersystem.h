@@ -14,6 +14,8 @@ public:
     ~Lagersystem();
 
 private slots:
+    //Allgemein
+    void page_changed(int page);
     //Seite 0
     void search_button_0_clicked();
     void store_button_clicked();    
@@ -43,6 +45,7 @@ private slots:
 private:
     Ui::LagersystemClass ui;
     QSqlQueryModel* query_model;
+    QSqlQueryModel* query_model_minamount;
     QString selected_articlenumber;
 	QSqlDatabase db;
     //Allgemein

@@ -38,6 +38,8 @@ public:
 
 	QString search_in_aenderungsverlauf(QSqlDatabase database, QSqlQueryModel* query_model, QString zeitpunkt = "", QString artikelnummer = "", QString bezeichnung = "", QString aenderungsart = "");
 
+	QString set_query_sql_text(QSqlDatabase database, QSqlQueryModel* query_model, QString sql_text);
+
 private:
 
 };

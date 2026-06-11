@@ -15,7 +15,11 @@ Lagersystem::Lagersystem(QWidget *parent)
 
 	creating_databases();
 	query_model = new QSqlQueryModel(this);
-
+	query_model_minamount = new QSqlQueryModel(this);
+	//Allgemein
+	connect(ui.stackedWidget, &QStackedWidget::currentChanged, this, &Lagersystem::page_changed);
+	ui.tableView_0_1->setModel(query_model_minamount);
+	ui.tableView_0_1->setEditTriggers(QAbstractItemView::NoEditTriggers);
     //Seite 0
     init_page_0();
 	ui.tableView_0->setModel(query_model);
@@ -41,16 +45,35 @@ Lagersystem::Lagersystem(QWidget *parent)
 	ui.tableView_4->setModel(query_model);
 	ui.tableView_4->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
 
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
+
+	error = logiccontroller.set_query_sql_text(db, query_model_minamount, "SELECT Artikelnummer, Bezeichnung, Menge, Mindestmenge, (Menge - Mindestmenge) AS Differenz_zum_Soll FROM lagerbestand WHERE Menge < Mindestmenge");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 	
-
 
 	
 }
 
 Lagersystem::~Lagersystem()
 {}
+
+// Allgemein
+
+void Lagersystem::page_changed(int page) {
+	if (page == 0) {
+		QString error = logiccontroller.set_query_sql_text(db, query_model_minamount, "SELECT Artikelnummer, Bezeichnung, Menge, Mindestmenge, (Menge - Mindestmenge) AS Differenz_zum_Soll FROM lagerbestand WHERE Menge < Mindestmenge");
+		if (!error.isEmpty()) {
+			QMessageBox::warning(this, "Warnung", error);
+		}
+		
+	}
+}
 
 // Seite 0
 
@@ -75,7 +98,10 @@ void Lagersystem::search_button_0_clicked() {
 void Lagersystem::store_button_clicked() {
     ui.stackedWidget->setCurrentIndex(1);
 	selected_articlenumber = "";
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 	ui.tableView_1->clearSelection();
  
 }
@@ -83,20 +109,29 @@ void Lagersystem::store_button_clicked() {
 void Lagersystem::store_history_button_clicked() {
 	ui.stackedWidget->setCurrentIndex(2);
 	selected_articlenumber = "";
-	query_model->setQuery("SELECT * FROM buchungsverlauf ORDER BY -Buchungs_ID", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM buchungsverlauf ORDER BY -Buchungs_ID");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 void Lagersystem::change_button_clicked() {
 	ui.stackedWidget->setCurrentIndex(3);
 	selected_articlenumber = "";
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 	ui.tableView_1->clearSelection();
 }
 
 void Lagersystem::change_history_button_clicked() {
 	ui.stackedWidget->setCurrentIndex(4);
 	selected_articlenumber = "";
-	query_model->setQuery("SELECT * FROM aenderungsverlauf ORDER BY -Aenderungs_ID", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM aenderungsverlauf ORDER BY -Aenderungs_ID");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 
@@ -156,7 +191,10 @@ void Lagersystem::tableview_1_clicked(const QModelIndex& index) {
 
 void Lagersystem::exit_button_1_clicked() {
 	ui.stackedWidget->setCurrentIndex(0);
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 // Seite 2
@@ -177,7 +215,10 @@ void Lagersystem::search_button_2_clicked() {
 
 void Lagersystem::exit_button_2_clicked() {
 	ui.stackedWidget->setCurrentIndex(0);
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 // Seite 3
@@ -210,7 +251,10 @@ void Lagersystem::tableview_3_clicked(const QModelIndex& index) {
 
 void Lagersystem::exit_button_3_clicked() {
 	ui.stackedWidget->setCurrentIndex(0);
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 void Lagersystem::delete_button_3_clicked() {
@@ -332,7 +376,10 @@ void Lagersystem::change_button_3_clicked() {
 
 void Lagersystem::exit_button_4_clicked(){
 	ui.stackedWidget->setCurrentIndex(0);
-	query_model->setQuery("SELECT * FROM lagerbestand", db);
+	QString error = logiccontroller.set_query_sql_text(db, query_model, "SELECT * FROM lagerbestand");
+	if (!error.isEmpty()) {
+		QMessageBox::warning(this, "Warnung", error);
+	}
 }
 
 void Lagersystem::search_button_4_clicked() {

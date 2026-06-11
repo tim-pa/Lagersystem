@@ -9,7 +9,13 @@ LogicController::LogicController(){
 LogicController::~LogicController() {
 }
 
-
+QString LogicController::set_query_sql_text(QSqlDatabase database, QSqlQueryModel* query_model, QString sql_text) {
+    query_model->setQuery(sql_text, database);
+    if (query_model->lastError().isValid()) {
+        return "Fehler: " + query_model->lastError().text();
+    }
+    return "";    
+}
 
 QString LogicController::search_in_lagerbestand(QSqlDatabase database, QSqlQueryModel* query_model, QString artikelnummer, QString kategorie,
     QString bezeichnung, QString menge, QString regal, QString mindestmenge) {

@@ -18,10 +18,10 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_0">
-       <layout class="QGridLayout" name="gridLayout_8">
+       <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
          <widget class="QLabel" name="label">
           <property name="text">
@@ -108,6 +108,9 @@
          <widget class="QTableView" name="tableView_0"/>
         </item>
         <item row="4" column="0">
+         <widget class="QTableView" name="tableView_0_1"/>
+        </item>
+        <item row="5" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPushButton" name="store_button">
